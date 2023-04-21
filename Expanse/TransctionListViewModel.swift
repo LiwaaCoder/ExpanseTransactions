@@ -54,7 +54,7 @@ final class TranscationListViewModel: ObservableObject
     func groupTransctionByMonth()->TranscationGroup{
         
         guard !transactions.isEmpty else{return [:] }
-        let grouptransaction = TranscationGroup(grouping: transactions) {$0.month}
+        let grouptransaction = TranscationGroup(grouping: transactions){$0.month}
         return grouptransaction
         
     }
