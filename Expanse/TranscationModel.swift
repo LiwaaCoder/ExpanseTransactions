@@ -33,12 +33,12 @@ struct Transaction:Identifiable , Decodable , Hashable{
     }
     
     var month:String{
-        return datParse.formatted(.dateTime.year().month(.wide))
+        return dateParse.formatted(.dateTime.year().month(.wide))
     }
     
     
     
-    var datParse : Date{
+    var dateParse : Date{
         date.dateParse() 
     }
     

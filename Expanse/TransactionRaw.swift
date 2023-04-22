@@ -33,7 +33,7 @@ struct TransactionRaw: View {
                     .opacity(0.7)
                     .lineLimit(1)
                 
-                Text(transaction.datParse,format:.dateTime.year().month().day())
+                Text(transaction.dateParse,format:.dateTime.year().month().day())
                     .font(.footnote)
                     .foregroundColor(.secondary)
             }

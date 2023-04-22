@@ -25,6 +25,7 @@ struct TransactionList: View {
                             Text (month)
                         }
                         .listSectionSeparator (.hidden)
+                      
                   }
               }
               .listStyle (.plain)

@@ -7,8 +7,10 @@
 
 import Foundation
 import Combine
+import Collections
 
-typealias TranscationGroup = [String : [Transaction]]
+typealias TranscationGroup = OrderedDictionary<String , [Transaction]>
+typealias TransactionPrefixSum = [(String , Double)]
 
 final class TranscationListViewModel: ObservableObject
 {
@@ -58,4 +60,26 @@ final class TranscationListViewModel: ObservableObject
         return grouptransactions
         
     }
+    
+    func accumlateTransaction() ->TransactionPrefixSum{
+        print("AccumlateTransactions")
+        guard !transactions.isEmpty else {return [] }
+        
+        let today = "04/22/2023".dateParse()
+        let dateInterval = Calendar.current.dateInterval(of:.month, for: today)!
+        print ("dateInterval",dateInterval)
+        
+        var sum : Double = .zero
+        var cumlitaveSum = TransactionPrefixSum()
+        for date in stride (from: dateInterval.start, to: today, by: 60 * 60 * 24) {
+            let daily = transactions.filter {$0.dateParse == date && $0.isExpense == true}
+            let dailt_total = daily.reduce(0){ $0 - $1.signedAmount}
+            sum += dailt_total
+            cumlitaveSum.append((date.formatted(),sum))
+            print (date.formatted() , "dailtTotal:" , dailt_total , "Sum:" , sum)
+    
+            }
+        return cumlitaveSum
+        }
+    
 }

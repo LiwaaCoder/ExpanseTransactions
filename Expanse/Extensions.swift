@@ -39,5 +39,11 @@ extension String{
     
 }
 
+extension Date: Strideable{
+    func format() ->String{
+        return self.formatted(.dateTime.year().month().day())
+    }
+}
+
  
 
