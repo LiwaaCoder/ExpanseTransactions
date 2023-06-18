@@ -3,11 +3,7 @@
 
 # ExpanseTransaction App in SwiftUI
 
+![Simulator Screenshot - iPhone 14 Pro - 2023-06-17 at 23 31 07](https://github.com/LiwaaCoder/ExpanseTransactions/assets/66652532/5b7c1b39-6b7e-4795-ac75-f576ca0235ae)
 
 ScreenShoots : 
 
-<p float="left">
-  <img src="https://user-images.githubusercontent.com/66652532/233776392-06d06b63-a97a-4efc-8ff6-0f1b60a2917c.png"width="300" />
-  <img src="https://user-images.githubusercontent.com/66652532/233776551-3ff761d9-3430-453d-a42e-1136d87b40d1.png"width=300 />
-
-</p>
